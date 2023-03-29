@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.
+        var arrayInt = [1,2,3,4,5];
+        var tongSoChan = 0;
+        var tongSoLe = 0;
+        var n;
+        var check = true;
+        let max = arrayInt[0];
+        let min = arrayInt[0];
+        for(let i = 0; i < arrayInt.length; i++){
+            console.log(arrayInt[i]);
+            if(arrayInt[i] % 2 == 0){
+                tongSoChan += arrayInt[i];
+                console.log("So Chan:" + arrayInt[i]);
+            }  
+            else if(arrayInt[i] % 2 != 0){
+                tongSoLe += arrayInt[i]; 
+                console.log("So Le:" + arrayInt[i]);
+            }
+            }
+            console.log("Tong so chan:" + tongSoChan);
+            console.log("Tong so Le:" + tongSoLe);
+
+
+            // for(let  i = 2 ; i < arrayInt.length; i++){  
+            //     if(arrayInt[i] %  i == 0 ){
+            //         check = false;
+            //         break;
+            //     }
+            // }
+            // if(check == false){
+            //     console.log(arrayInt[i]);
+            // }
+
+
+            for (let i = 1; i < arrayInt.length; i++) {
+                if (arrayInt[i] > max) {
+                max = arrayInt[i];
+                }       
+            }
+            console.log("max: " + max );
+            for (let i = 1; i < arrayInt.length; i++) {
+                if (arrayInt[i] < min) {
+                min = arrayInt[i];
+                }       
+            }
+            console.log("min: " + min );
+
+            var a = arrayInt.sort(function(a, b){return b - a});
+            console.log("Mang Giam Dan:" + a);
+            // 2.
+            var number = [];
+            number[0] =[1,2,3];
+            number[1] =[4,5,6];
+            number[2] =[7,8,9];
+            console.log(number);
+            for(let i = 0; i < number.length; i++){
+                for(let j = 0; j < number[i].length; j++){
+                    console.log(number[0][1]);
+                }
+            }
+            var b = number.sort(function(a, b){return b - a});
+            console.log("Mang Giam Dan:" + b);
+
+    </script>
+</body>
+</html>
