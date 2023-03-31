@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3.Tạo mảng có tên là styles có giá trị các phần tử là “Jazz”, “Blues”
+        const style = ["Jazz", "Blues"];
+
+        // a. Thêm phần tử “Rock-n-Roll” vào cuối mảng
+        style.splice(2,0,"Rock-n-Roll");
+        console.log(style);   
+
+        // b. Thay thế phần tử nằm chính giữa mảng bằng “Classics” nếu mảng có tổng số phần tử là lẻ
+        style.splice(1,1,"Classics");
+        console.log(style);
+
+        // c. Xóa phần tử đầu tiên của mảng và hiển thị mảng
+        style.splice(0,1);
+        console.log(style);
+
+        // d. Thêm phần tử “Rap” và “Reggae” vào đầu mảng và hiển thị
+        style.splice(0,0,"Rap","Reggae");
+        console.log(style);
+
+        // --------------------
+
+        // 4. Khai báo mảng một chiều
+        // a. Cho phép người dùng nhập các giá trị của mảng bằng hàm prompt và lưu trữ giá trị trong mảng cho đến khi 
+        // người dùng nhập một giá trị không phải là số, một chuỗi trống hoặc nhấn “Cancel”
+        var list = [];
+        var flag = true;
+        while(flag){
+            let n = prompt("Nhap gia tri vao: ");
+            if(n != null && !isNaN(n) && n != ""){
+                list.push(Number(n));
+            }else{
+                flag = false;
+            }
+        }
+        console.log(list);
+
+        // b. Tính tổng các giá trị của mảng, in ra phần tử có giá trị max - min (không và có sử dụng hàm Math.max và Math.min)
+        let sum = 0;
+        for(let i = 0; i < list.length; i++){
+            sum = sum + list[i];
+        }
+        let max = list[0];
+        for(let i = 0; i <list.length;i++){
+            if(list[i] > max){
+                max = list[i];
+            }
+        }
+        let min = list[0];
+        for(let i = 0; i <list.length;i++){
+            if(list[i] < min){
+                min = list[i];
+            }
+        }
+        console.log("Tong gia tri mang: "+ sum)
+        console.log("Max: " + max)
+        console.log("Min: " + min )
+        
+        // 5. Khai báo và khởi tạo mảng 1 chiều số nguyên. Nhập vào 2 số nguyên a, b. 
+        // Khởi tạo mảng gồm các phần tử của mảng số nguyên mà giá trị nằm giữa a và b
+
+        var list2 = [];
+        let a = parseInt(prompt("Nhap so nguyen a: "));
+        let b = parseInt(prompt("Nhap so nguyen b: "));
+        for(let i = a +1 ; i < b; i++){
+            list2.push(i);
+        }
+        console.log("Gia tri nam giua a va b: " + list2);
+
+    </script>
+</body>
+</html>
