@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt</title>
+</head>
+<body>
+    <script>
+        1. Viết function in ra câu “Xin chào Rikkei Academy”
+       let hello = () => console.log("Xin chào Rikkei Academy");
+       hello();
+
+        //    2. Viết function tính bình phương của một số
+        function binhPhuong(number){
+            let a = number * number;
+            console.log("Binh phuong cua " + number + " la :" + a)
+        }
+        let b = prompt("nhập vào 1 số bất kỳ để tính bình phương: ");
+        binhPhuong(b);
+
+        // 3. Viết function tính thế kỷ của một năm nhập vào từ bàn phím. Biết thế kỷ thứ
+        // nhất tính từ năm 1 đến 100
+
+        function theKy(year){
+            let nam = Math.ceil(year / 100);
+            console.log("năm " + year + " thuộc thế kỉ thứ " + nam);
+        }
+        let c = prompt("Nhập năm bất kì để xem năm đó thuộc thế kỉ nào: ")
+        theKy(c);
+
+        // 4. Cho chuỗi dài hơn 15 ký tự, viết function cắt chuỗi, lấy ra 10 ký tự đầu tiên và
+        // thêm vào dấu “…” ở cuối chuỗi
+         function chuoi(number1){
+            let dauCham = "...";
+            let str = number1.substring(0,10);
+            console.log(str + dauCham);
+        }
+        let d = prompt("viết một chuỗi dài bất kỳ hơn 15 ký tự: ");
+        chuoi(d);
+
+        5. Viết function chuẩn hóa một từ - chỉ viết hoa chữ cái đầu tiên. Ví dụ: “rIkKEi”
+        sau khi chuẩn hóa thành “Rikkei”
+
+        function vietHoa(chuCai){
+
+
+            let all = chuCai.substring(1);
+            let fist = chuCai.substring(0,1);
+            console.log(fist.toUpperCase() + all.toLowerCase());
+        }
+        let e = prompt();
+        vietHoa(e);
+
+
+
+    </script>
+</body>
+</html>
