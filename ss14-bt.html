@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 1 -->
+    <h1>Bài 1</h1>
+    <input type="text" id="fullName">
+    <button id="btnAdd">Thêm</button>
+    <div>
+        <h3>Danh sách sinh viên</h3>
+        <ul id="list"></ul>
+    </div>
+
+    <!-- Bài 2 -->
+    <h1>Bài 2</h1>
+    <div id="wrap" style="width: 350px; height: 350px;border: 1px solid red"></div>
+    <p><input id="borderWidth" type="text" placeholder="Độ rộng đường viền"></p>
+    <p><input id="borderStyle" type="text" placeholder="Kiểu đường viền"></p>
+    <p><input id="borderColor" type="text" placeholder="Màu đường viền"></p>
+    <script>
+        // BÀI 1
+        // Viết javascipt xử lý sau khi nhập tên sinh viên vào input#fullName (không được bỏ trống) và bấm nút button#btnAdd, 
+        //thực hiện thêm mới 1 phần tử <li> vào ul#list với nội dung là tên sinh viên vừa nhập ở input
+        let btn = document.getElementById("btnAdd");
+        let ip = document.getElementById("fullName");
+        let list = document.getElementById("list");
+        btn.onclick = () =>{
+           
+           let textIp = ip.value;
+            if(textIp != ""){
+                let li = document.createElement("li");
+                li.innerText = textIp;
+                list.appendChild(li);
+            }
+        }
+            
+        // BÀI 2
+        // Viết javascript sao cho sau khi nhập giá trị ở các ô input (borderWidth, borderStyle, borderColor) 
+        // sẽ thay đổi thuộc tính css tương ứng ở div#wrap
+        let wrapDiv = document.getElementById("wrap");
+        let widthA = document.getElementById("borderWidth");
+        let styleB = document.getElementById("borderStyle");
+        let colorC = document.getElementById("borderColor");
+
+        widthA.oninput = () => {
+            let a = widthA.value;
+            wrapDiv.style.borderWidth = a;
+            
+        }
+        styleB.oninput = () => {
+            let b = styleB.value;
+            wrapDiv.style.borderStyle = b;
+            
+        }
+        colorC.oninput = () => {
+            let c = colorC.value;
+            wrapDiv.style.borderColor = c;
+        }
+
+
+    </script>
+</body>
+</html>
