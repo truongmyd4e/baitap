@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Trang chủ</h1>
+    <h2>Xin chào:  <span id="user"></span></h2>
+    <button id="qlsv">Quản lý tài khoản</button>
+    <button id="logout">Đăng xuất</button>
+    <script>
+        function checkLogin() {
+            if (sessionStorage.getItem('register')) {
+                let _username = sessionStorage.getItem('userLorgin');
+                document.getElementById('user').innerText = _username;
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+        checkLogin();
+
+        let qlsv = document.getElementById('qlsv')
+        qlsv.onclick = () =>{
+            window.location.href = 'quanly-sv.html'
+        }
+        
+        document.getElementById('logout').onclick = () => {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+
+</html>

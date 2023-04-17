@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thông tin đăng ký</h1>
+   
+        <p><b>Username</b><input id="Username" type="text"></p>
+        <p><b>Password</b><input id="Password" type="password"></p>
+        <p><b>Email</b><input id="Email" type="text"></p>
+        <p><b>Phone</b><input id="Phone" type="text"></p>
+        <button id="dangKy" type="submit">Đăng ký</button>
+    <script>
+
+        let dangKy = document.getElementById('dangKy')
+         let register = JSON.parse(sessionStorage.getItem('register')) || [];
+
+        dangKy.onclick = ()=>{
+     
+        let userName = document.getElementById('Username').value
+        let Password = document.getElementById('Password').value
+        let Email = document.getElementById('Email').value
+        let Phone = document.getElementById('Phone').value
+
+        let regexEmail = /^[\w\.]+@[\w\-\.]+\.[a-z]{2,4}$/;
+        if(!regexEmail.test(Email)){
+        alert("Email không đúng định dạng")
+        return;
+        }
+
+        let regexPhone = /^0[938]{1}\d{8}$/;
+        if(!regexPhone.test(Phone)){
+        alert("Số điện thoại không đúng định dạng")
+        return;
+        }
+
+        let list = {
+            id:id =1,
+            userName:userName,
+            Password:Password
+
+        };
+        register.push(list);
+
+        sessionStorage.setItem("register",JSON.stringify(register))
+        sessionStorage.setItem("userLorgin",JSON.stringify(userName))
+        alert('Đăng ký thành công !')
+        window.location.href = "login.html"
+    };
+      
+    </script>
+</body>
+</html>
